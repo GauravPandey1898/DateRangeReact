@@ -80,6 +80,7 @@ singleCalendar | Bool | false | Only applicable on SingleDatePicker. When this p
 ### Author
 - David Tran - david@jslancer.com
 - Leo Phan - leo.phan@jslancer.com
+- Gaurav Pandey - gauravpandey.me
 
 ### License
 MIT

@@ -30,7 +30,7 @@ export function getWeekDay(startWeekDay, weekDayFormat) {
   for (let i = start; i < start + 7; i++) {
 
   }
-  const arrWeekDay = weekDayFormat === 'dd' ? ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'] :
+  const arrWeekDay = weekDayFormat === 'dd' ? ['M', 'T', 'W', 'T', 'F', 'S', 'S'] :
     weekDayFormat === 'ddd' ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   if (startWeekDay === 'sunday') {

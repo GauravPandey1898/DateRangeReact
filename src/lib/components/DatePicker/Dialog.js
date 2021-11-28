@@ -149,7 +149,7 @@ const Dialog = ({
         && (
         <div className="dialog-footer">
           <button type="button" className="submit-button" onClick={toggleDialog} tabIndex="0">
-            Done
+            Apply
           </button>
           <button
             type="button"
