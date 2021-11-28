@@ -1,11 +1,11 @@
 {
   "name": "@toostoned/react-google-flight-datepicker-customized",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "An ReactJS implementation for Google Flight date-picker by JSLancer team modified",
   "author": "David Tran, Leo Phan, Gaurav Pandey",
   "license": "MIT",
   "homepage": "https://github.com/GauravPandey1898/DateRangeReact",
-  "main": "dist/index.js",
+  "main": "src/lib/index.js",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -93,7 +93,7 @@
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "files": [
-    "dist"
+    "src/lib"
   ],
   "jest": {
     "roots": [
