@@ -77,35 +77,12 @@ const DateInput = ({
       onFocus={onDateInputFocus}
       id={name === "START_DATE" ? "start-date-input-button" : "end-date-input-button"}
     >
-      {showIcon && (
-        <CalendarIcon className="icon-calendar" viewBox="0 0 24 24" />
-      )}
+      
 
       <div className="selected-date">
         {formattedDate || <div className="date-placeholder">{placeholder}</div>}
       </div>
-      {formattedDate && (
-        <div className="change-date-group">
-          <button
-            type="button"
-            className="btn-outline change-date-button"
-            onClick={prevDate}
-            tabIndex={nonFocusable ? '-1' : '0'}
-            disabled={disablePrev}
-          >
-            <PrevIcon viewBox="0 0 24 24" className="icon-arrow" />
-          </button>
-          <button
-            type="button"
-            className="btn-outline change-date-button"
-            onClick={nextDate}
-            tabIndex={nonFocusable ? '-1' : '0'}
-            disabled={disableNext}
-          >
-            <NextIcon viewBox="0 0 24 24" className="icon-arrow" />
-          </button>
-        </div>
-      )}
+      
     </div>
   );
 };

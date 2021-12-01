@@ -32,8 +32,7 @@
   .date-picker-input {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    border: 1px solid #dadce0;
+    justify-content: flex-start;
     border-radius: 4px;
     color: #3c4043;
     height: 56px;
@@ -48,6 +47,12 @@
       min-height: 24px;
     }
   }
+  .date-picker-input-label{
+    margin-right: 0px;
+    color: #e9e5de;
+    font-size: 16px;
+    line-height: 19px;
+  }
 
   .date-picker-date-group {
     position: relative;
@@ -55,6 +60,17 @@
     justify-content: space-between;
     height: 100%;
     flex-grow: 1;
+  }
+
+  .date-picker-inut-area{
+    border: 1px solid #d8d8d8;
+    margin: 0px 10px;
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+    height: 30px;
+    border-radius: 4px;
+    align-items: center;
   }
 
   .date {
@@ -90,11 +106,12 @@
     flex: 1 1 0px;
     align-items: center;
     height: 100%;
-    font-size: 0.9rem;
-    line-height: normal;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color:#000000;
+    font-size: 12px;
+    line-height: 22px;
   }
 
   .date-placeholder {
@@ -207,12 +224,12 @@
 
   .date:focus,
   .date.is-focus {
-    background-color: #f4f8ff;
+    background-color: #ffffff;
 
     &::after {
       content: '';
       margin: -1px;
-      border: 2px solid #1a73e8;
+      border: 2px solid #2867b2;
       border-radius: 4px;
       position: absolute;
       pointer-events: none;
@@ -235,12 +252,13 @@
   }
 
   .reset-button {
-    font-size: 0.9rem;
+    font-size: 14px;
+    line-height: 16px;
     padding: 0 8px;
     height: 36px;
     border-radius: 4px;
     border: none;
-    color: #5f6368;
+    color: #A5A5A3;
     min-width: 64px;
 
     &:hover {
@@ -377,7 +395,7 @@
 
     &:hover::after {
       background-color: #fff;
-      border: 2px solid #4285f4;
+      border: 2px solid #2867b2;
       bottom: -2px;
       left: -2px;
       right: -2px;
@@ -392,7 +410,7 @@
       }
 
       &::after {
-        background-color: #4285f4;
+        background-color: #2867b2;
         border-radius: 100%;
       }
 
@@ -414,7 +432,7 @@
     }
 
     &.hovered {
-      background-color: #d9edfd;
+      background-color: #dfe8f4;
       border-radius: unset;
 
       .background-day {
@@ -422,11 +440,11 @@
       }
 
       &.end {
-        background: linear-gradient(90deg, #d9edfd 50%, #fff 50%);
+        background: linear-gradient(90deg, #dfe8f4 50%, #fff 50%);
       }
 
       &:hover {
-        background-color: #d9edfd;
+        background-color: #dfe8f4;
 
         &::after {
           border-radius: 100%;
@@ -436,11 +454,11 @@
     }
 
     &.selected.hovered {
-      background: linear-gradient(90deg, #fff 50%, #d9edfd 50%);
+      background: linear-gradient(90deg, #fff 50%, #dfe8f4 50%);
       color: #fff;
 
       &.end {
-        background: linear-gradient(90deg, #d9edfd 50%, #fff 50%);
+        background: linear-gradient(90deg, #dfe8f4 50%, #fff 50%);
       }
 
       &:hover {
@@ -449,7 +467,7 @@
 
       &::after {
         border-radius: 100%;
-        background-color: #4285f4;
+        background-color: #2867b2;
       }
 
       &:hover::after {
@@ -514,22 +532,26 @@
   .dialog-footer {
     align-items: center;
     display: flex;
-    flex-direction: row-reverse;
-    padding: 8px;
+    flex-direction: row;
+    padding: 10px 20px;
 
     .submit-button {
-      border-radius: 8px;
-      padding: 10px 8px;
-      border: none;
+      background-color: #ffffff;
+      color: #2867b2;
+      font-weight: 400;
+      font-size: 14px;
       line-height: 16px;
-      text-transform: uppercase;
-      color: #fff;
-      background: #4285f4;
-      height: 36px;
-      min-width: 88px;
-      font-weight: 500;
-      font-size: 0.9rem;
+      height: 28px;
+      border-radius: 20px;
+      border-color: #2867b2;
+      border: solid 1px;
+      width: 80px;
       cursor: pointer;
+
+      &:disabled{
+        border-color: #666666;
+        color: #666666;
+      }
     }
   }
 
@@ -686,7 +708,7 @@
         color: #fff !important;
 
         &::after {
-          background-color: #4285f4 !important;
+          background-color: #2867b2 !important;
         }
       }
     }

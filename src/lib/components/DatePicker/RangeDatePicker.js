@@ -309,7 +309,7 @@ RangeDatePicker.defaultProps = {
   monthFormat: '',
   highlightToday: false,
   dateInputSeperator: null,
-  hideDialogHeader: false,
+  hideDialogHeader: true,
   hideDialogFooter: false,
   hideDialogAfterSelectEndDate: false,
   isOpen: false,

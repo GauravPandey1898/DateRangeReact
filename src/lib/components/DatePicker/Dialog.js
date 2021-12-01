@@ -148,16 +148,35 @@ const Dialog = ({
       {!hideDialogFooter
         && (
         <div className="dialog-footer">
-          <button type="button" className="submit-button" onClick={toggleDialog} tabIndex="0">
-            Done
-          </button>
+          
+          <DateInputGroup
+            inputFocus={inputFocus}
+            handleClickDateInput={handleClickDateInput}
+            fromDate={fromDate}
+            toDate={toDate}
+            minDate={minDate}
+            maxDate={maxDate}
+            handleChangeDate={onChangeDate}
+            startDatePlaceholder={startDatePlaceholder}
+            endDatePlaceholder={endDatePlaceholder}
+            dateFormat={dateFormat}
+            isSingle={isSingle}
+            nonFocusable={!complsOpen}
+            dateInputSeperator={dateInputSeperator}
+          />
           <button
             type="button"
-            className="btn-outline reset-button mobile"
+            className="btn-outline reset-button"
             onClick={handleReset}
           >
-            Reset
+            Cancel
           </button>
+          <button type="button" className="submit-button" onClick={toggleDialog} tabIndex="0">
+            Apply
+          </button>
+          
+          
+          
         </div>
         )}
     </div>

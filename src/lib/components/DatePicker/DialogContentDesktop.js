@@ -280,6 +280,7 @@ const DialogContentDesktop = ({
         })}
         style={{
           transform: `translateX(${translateAmount}px)`,
+          paddingTop: "30px"
         }}
       >
         {renderMonthCalendars()}
