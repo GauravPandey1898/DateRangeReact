@@ -182,10 +182,11 @@ const RangeDatePicker = ({
   }
 
   function handleReset() {
-    setInputFocus('from');
-    setHoverDate(null);
-    updateFromDate(null, true);
-    updateToDate(null, true);
+    setComplsOpen(false);
+    // setInputFocus('from');
+    // setHoverDate(null);
+    // updateFromDate(null, true);
+    // updateToDate(null, true);
   }
 
   function handleChangeDate(value, input) {
