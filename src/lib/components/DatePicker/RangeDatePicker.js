@@ -32,6 +32,7 @@ const RangeDatePicker = ({
   hideDialogAfterSelectEndDate,
   isOpen,
   onCloseCalendar,
+  onCancelFunc
 }) => {
   const [complsOpen, setComplsOpen] = useState(false);
   const containerRef = useRef(null);
@@ -183,6 +184,7 @@ const RangeDatePicker = ({
 
   function handleReset() {
     setComplsOpen(false);
+    onCancelFunc();
     // setInputFocus('from');
     // setHoverDate(null);
     // updateFromDate(null, true);
@@ -291,6 +293,7 @@ RangeDatePicker.propTypes = {
   hideDialogAfterSelectEndDate: PropTypes.bool,
   isOpen: PropTypes.bool,
   onCloseCalendar: PropTypes.func,
+  onCancelFunc: PropTypes.func,
 };
 
 RangeDatePicker.defaultProps = {
@@ -315,6 +318,7 @@ RangeDatePicker.defaultProps = {
   hideDialogAfterSelectEndDate: false,
   isOpen: false,
   onCloseCalendar: () => {},
+  onCancelFunc: () => {},
 };
 
 export default RangeDatePicker;
