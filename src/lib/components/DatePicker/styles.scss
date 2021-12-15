@@ -52,6 +52,7 @@
     color: #aaa;
     font-size: 16px;
     line-height: 19px;
+    font-weight: 400;
   }
 
   .date-picker-date-group {
@@ -71,6 +72,7 @@
     height: 30px;
     border-radius: 4px;
     align-items: center;
+    min-width: 88px;
   }
 
   .date {
@@ -247,8 +249,8 @@
 
   .dialog-content {
     border-bottom: 1px solid #dadce0;
-    border-top: 1px solid #dadce0;
     position: relative;
+    //min-height: 320px;
   }
 
   .reset-button {
@@ -260,6 +262,7 @@
     border: none;
     color: #aaa;
     min-width: 64px;
+    margin: 0px 7px;
 
     &:hover {
       //background-color: #fafafa;
@@ -411,7 +414,12 @@
       color: white;
 
       &:hover {
-        color: #000;
+        color: #191919;
+
+        .text-day{
+          color: #191919;
+          font-weight: 500;
+        }
       }
 
       &::after {
@@ -420,7 +428,12 @@
       }
 
       &:hover::after {
-        background-color: #fff;
+        background-color: #dfe8f4;
+      }
+
+      .text-day{
+        color: #fff;
+        font-weight: 600;
       }
     }
 
@@ -452,7 +465,7 @@
 
         &::after {
           border-radius: 100%;
-          background-color: #fff;
+          background-color: #dfe8f4;
         }
       }
     }
@@ -475,7 +488,7 @@
       }
 
       &:hover::after {
-        background-color: #fff;
+        background-color: #dfe8f4;
       }
     }
 
@@ -493,14 +506,15 @@
       z-index: 3;
       color: #191919;
       font-size: 12px;
+      font-weight: 500;
     }
   }
 
   .calendar-flippers {
     position: absolute;
-    top: 0;
+    top: 34px;
     left: 0;
-    bottom: 0;
+    //bottom: 0;
     right: 0;
     display: flex;
     justify-content: space-between;
@@ -511,14 +525,14 @@
   .flipper-button {
     background-color: #fff;
     border-radius: 100%;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.24);
+    //box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.24);
     cursor: pointer;
     height: 40px;
     width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 -20px;
+    margin: 0 36px;
     pointer-events: all;
 
     svg {
@@ -546,13 +560,23 @@
       color: #2867b2;
       font-weight: 400;
       font-size: 16px;
-      line-height: 19px;
+      line-height: 24px;
       height: 28px;
       border-radius: 20px;
-      border-color: #2867b2;
-      border: solid 1px;
+      box-shadow: inset 0px 0px 0px 1px #2867b2;
+      border: none;
       width: 90px;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+
+      &:hover{
+        transform: none;
+        box-shadow: inset 0px 0px 0px 2px #2867b2;
+        background: #E8F3FF;
+      }
 
       &:disabled{
         border-color: #666666;
@@ -639,15 +663,17 @@
       height: 100%;
       max-height: 100%;
       position: fixed;
-      left: 0;
-      right: 0;
+      left: auto;
+      right: 0px;
       bottom: 10px;
       top: 100%;
       display: flex;
       flex-direction: column;
       opacity: 1;
       transform: none;
+      margin-top: -10px;
       z-index: 999999999;
+      border-radius: 8px 0px 8px 8px;
 
       &.open {
         transition: all 0.2s ease-out;
@@ -711,8 +737,10 @@
 
       &.selected:hover,
       &.hovered:hover {
-        color: #fff !important;
-
+        color: #dfe8f4 !important;
+        .text-day{
+          color:#191919;
+        }
         &::after {
           background-color: #2867b2 !important;
         }
@@ -740,6 +768,29 @@
 .highlight{
   .text-day{
     color: #2867b2 !important;
-    font-weight: 600;
+    font-weight: 700 !important;
   }
+}
+
+.disabled{
+  .text-day{
+    color:#aaa !important;
+  }
+}
+
+.calendar-year-flippers{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.year-name{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.year-button{
+  margin: 0px !important;
 }
