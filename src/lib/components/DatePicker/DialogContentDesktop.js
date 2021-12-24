@@ -41,7 +41,6 @@ const DialogContentDesktop = ({
     const prevMonth = dayjs(date).subtract(1, "month");
     const nextMonth = dayjs(date).add(1, "month");
     const futureMonth = dayjs(date).add(2, "month");
-    console.log("this is here", date);
     if (singleCalendar) {
       return [prevMonth, focusDate, nextMonth];
     } else {
@@ -49,16 +48,15 @@ const DialogContentDesktop = ({
     }
   }
 
-
   function decreaseCurrentYear() {
-    if(disableYearPrev) return;
+    if (disableYearPrev) return;
     const prevYear = dayjs(focusDate).subtract(1, "year");
 
     setFocusDate(prevYear);
   }
 
   function increaseCurrentYear() {
-    if(disableYearNext) return;
+    if (disableYearNext) return;
     const nextYear = dayjs(focusDate).add(1, "year");
 
     setFocusDate(nextYear);
@@ -88,10 +86,7 @@ const DialogContentDesktop = ({
       setDisablePrev(false);
     }
 
-    if (
-      minDate &&
-      focusDate.isBefore(dayjs(minDate).add(1, "year"), "year")
-    ) {
+    if (minDate && focusDate.isBefore(dayjs(minDate).add(1, "year"), "year")) {
       setDisableYearPrev(true);
     } else {
       setDisableYearPrev(false);
@@ -327,30 +322,36 @@ const DialogContentDesktop = ({
       ref={containerRef}
       onKeyDown={onKeyDown}
     >
-      <div className="calendar-year-flippers" style={{ display: "flex" }}>
+      <div className="calendar-year-flippers">
         <div
-          className={cx("flipper-button year-button", { disabled: disableYearPrev })}
+          className={cx("flipper-button year-button", {
+            disabled: disableYearPrev,
+          })}
           onClick={decreaseCurrentYear}
-          onKeyDown={onBackButtonKeyDown}
+          //onKeyDown={onBackButtonKeyDown}
           role="button"
           tabIndex="0"
         >
-          {!disableYearPrev ? (
-            <PrevIcon viewBox="0 0 24 24" />
-          ) : null}
+          <div>
+            {!disableYearPrev ? <PrevIcon viewBox="0 0 24 24" /> : null}
+          </div>
         </div>
-        {!disableYearPrev || !disableYearNext ? <div className="year-name">{dayjs(focusDate).get("year")}</div> : null}
+        {!disableYearPrev || !disableYearNext ? (
+          <div className="year-name">{dayjs(focusDate).get("year")}</div>
+        ) : null}
         <div
-          className={cx("flipper-button year-button", { disabled: disableYearNext })}
+          className={cx("flipper-button year-button", {
+            disabled: disableYearNext,
+          })}
           onClick={increaseCurrentYear}
           //onKeyDown={onNextButtonKeyDown}
           role="button"
           tabIndex="0"
           onBlur={focusOnCalendar}
         >
-          {!disableYearNext ? (
-            <NextIcon viewBox="0 0 24 24" />
-          ) : null}
+          <div>
+            {!disableYearNext ? <NextIcon viewBox="0 0 24 24" /> : null}
+          </div>
         </div>
       </div>
       <div
@@ -360,7 +361,7 @@ const DialogContentDesktop = ({
         })}
         style={{
           transform: `translateX(${translateAmount}px)`,
-          paddingTop: "8px",
+          paddingTop: "48px",
         }}
       >
         {renderMonthCalendars()}
